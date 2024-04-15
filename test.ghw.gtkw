@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Mon Apr 15 18:06:55 2024
+[*]
+[dumpfile] "/home/mark/repos/hardwaresysteme/halfadder_tb.ghw"
+[dumpfile_mtime] "Mon Apr 15 17:45:01 2024"
+[dumpfile_size] 431
+[savefile] "/home/mark/repos/hardwaresysteme/test.ghw.gtkw"
+[timestart] 0
+[size] 2710 1538
+[pos] -1 -1
+*-19.000000 3617000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.half_adder_tb.
+[treeopen] top.half_adder_tb.impl.
+[sst_width] 233
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 470
+@800601
+-ab
+@421
+[color] 1
+top.half_adder_tb.impl.a
+[color] 1
+top.half_adder_tb.impl.b
+@1000601
+-ab
+@28
+top.half_adder_tb.impl.carry
+top.half_adder_tb.impl.sum
+[pattern_trace] 1
+[pattern_trace] 0
