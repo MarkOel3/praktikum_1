@@ -14,7 +14,7 @@ architecture TESTBENCH2 of HALF_ADDER_TB is
   end component;
 
   -- Configuration...
-  for SPEC: HALF_ADDER use entity WORK.HALF_ADDER(DATAFLOW);
+  for SPEC: HALF_ADDER use entity WORK.HALF_ADDER(TIMED_DATAFLOW);
   for IMPL: HALF_ADDER use entity WORK.HALF_ADDER(STRUCTURE);
 
   -- Internal signals...

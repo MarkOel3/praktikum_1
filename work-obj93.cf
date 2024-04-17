@@ -1,28 +1,28 @@
 v 4
-file . "fulladder.vhdl" "a6373afb9d4953d137dd061c7df92cbe78a21e16" "20240415190016.063":
-  entity full_adder at 1( 0) + 0 on 44;
-  architecture behavior of full_adder at 11( 169) + 0 on 45;
-  architecture dataflow of full_adder at 27( 660) + 0 on 46;
-  architecture structure of full_adder at 33( 796) + 0 on 47;
-file . "half_adder_tb.vhdl" "77619141cfcf5aa5b303a34519d4754358cb3317" "20240415185132.216":
-  entity half_adder_tb at 1( 0) + 0 on 34;
-  architecture testbench2 of half_adder_tb at 9( 90) + 0 on 35;
-  architecture testbench1 of half_adder_tb at 61( 1711) + 0 on 36;
-file . "or2.vhdl" "2570d9073742ab7e6c75c4de8d1c4e49d0d12345" "20240415185117.612":
-  entity or2 at 1( 0) + 0 on 26;
-  architecture timed_dataflow of or2 at 10( 117) + 0 on 27;
-file . "and2.vhdl" "17273d3504b66f301c05ea7a4c00b829faacdef9" "20240415185113.894":
-  entity and2 at 1( 0) + 0 on 24;
-  architecture timed_dataflow of and2 at 10( 119) + 0 on 25;
-file . "xor2.vhdl" "7b3ae04763958ba76e442d6bb6ae14cda45b4a33" "20240415185121.428":
-  entity xor2 at 1( 0) + 0 on 28;
-  architecture timed_dataflow of xor2 at 10( 119) + 0 on 29;
-file . "half_adder.vhdl" "11ac8959f3eddf40cb2e64fdf0c6de447398aa35" "20240415185128.102":
-  entity half_adder at 1( 0) + 0 on 30;
-  architecture behavior of half_adder at 13( 168) + 0 on 31;
-  architecture dataflow of half_adder at 30( 560) + 0 on 32;
-  architecture structure of half_adder at 38( 660) + 0 on 33;
-file . "fulladder_tb.vhdl" "3a877374e97bf7aec23913e709650124825b70ad" "20240415190334.912":
-  entity full_adder_tb at 1( 0) + 0 on 51;
-  architecture testbench2 of full_adder_tb at 9( 90) + 0 on 52;
-  architecture testbench1 of full_adder_tb at 81( 2617) + 0 on 53;
+file . "fulladder_tb.vhdl" "ef63c06e209d53f029f91db4a605f17fc94f6dfd" "20240417135451.566":
+  entity full_adder_tb at 1( 0) + 0 on 367;
+  architecture testbench2 of full_adder_tb at 9( 90) + 0 on 368;
+  architecture testbench1 of full_adder_tb at 81( 2631) + 0 on 369;
+file . "half_adder.vhdl" "11c3b59d8e825f57115efedd5474175331a24673" "20240417135451.562":
+  entity half_adder at 1( 0) + 0 on 356;
+  architecture behavior of half_adder at 12( 167) + 0 on 357;
+  architecture timed_dataflow of half_adder at 38( 873) + 0 on 358;
+  architecture structure of half_adder at 64( 1591) + 0 on 359;
+file . "xor2.vhdl" "7b3ae04763958ba76e442d6bb6ae14cda45b4a33" "20240417135451.560":
+  entity xor2 at 1( 0) + 0 on 354;
+  architecture timed_dataflow of xor2 at 10( 119) + 0 on 355;
+file . "and2.vhdl" "17273d3504b66f301c05ea7a4c00b829faacdef9" "20240417135451.560":
+  entity and2 at 1( 0) + 0 on 352;
+  architecture timed_dataflow of and2 at 10( 119) + 0 on 353;
+file . "or2.vhdl" "2570d9073742ab7e6c75c4de8d1c4e49d0d12345" "20240417122320.197":
+  entity or2 at 1( 0) + 0 on 56;
+  architecture timed_dataflow of or2 at 10( 117) + 0 on 57;
+file . "half_adder_tb.vhdl" "dbcd7a9435fd27396dbfc939f8e416988335f94e" "20240417135451.563":
+  entity half_adder_tb at 1( 0) + 0 on 360;
+  architecture testbench2 of half_adder_tb at 9( 90) + 0 on 361;
+  architecture testbench1 of half_adder_tb at 61( 1717) + 0 on 362;
+file . "fulladder.vhdl" "f058b413e28af853ac05d0c95bb05e84ed8e1205" "20240417135451.565":
+  entity full_adder at 1( 0) + 0 on 363;
+  architecture behavior of full_adder at 13( 171) + 0 on 364;
+  architecture timed_dataflow of full_adder at 31( 664) + 0 on 365;
+  architecture structure of full_adder at 71( 2042) + 0 on 366;

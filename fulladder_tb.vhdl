@@ -14,7 +14,7 @@ architecture TESTBENCH2 of FULL_ADDER_TB is
   end component;
 
   -- Configuration...
-  for SPEC: FULL_ADDER use entity WORK.FULL_ADDER(DATAFLOW);
+  for SPEC: FULL_ADDER use entity WORK.FULL_ADDER(TIMED_DATAFLOW);
   for IMPL: FULL_ADDER use entity WORK.FULL_ADDER(STRUCTURE);
 
   -- Internal signals...
@@ -30,42 +30,42 @@ begin
   process
   begin
     a <= '0'; b <= '0'; c <= '0';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum_spec = sum_impl and carry_spec = carry_impl
         report "Specification and implementation differ! (a=0, b=0, c=0)";
 
     a <= '0'; b <= '1'; c <= '0';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum_spec = sum_impl and carry_spec = carry_impl
         report "Specification and implementation differ! (a=0, b=1, c=0)";
 
     a <= '1'; b <= '0'; c <= '0';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum_spec = sum_impl and carry_spec = carry_impl
         report "Specification and implementation differ! (a=1, b=0, c=0)";
 
     a <= '1'; b <= '1'; c <= '0';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum_spec = sum_impl and carry_spec = carry_impl
         report "Specification and implementation differ! (a=1, b=1, c=0)";
 
     a <= '0'; b <= '0'; c <= '1';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum_spec = sum_impl and carry_spec = carry_impl
         report "Specification and implementation differ! (a=0, b=0, c=1)";
 
     a <= '0'; b <= '1'; c <= '1';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum_spec = sum_impl and carry_spec = carry_impl
         report "Specification and implementation differ! (a=0, b=1, c=1)";
 
     a <= '1'; b <= '0'; c <= '1';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum_spec = sum_impl and carry_spec = carry_impl
         report "Specification and implementation differ! (a=1, b=0, c=1)";
 
     a <= '1'; b <= '1'; c <= '1';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum_spec = sum_impl and carry_spec = carry_impl
         report "Specification and implementation differ! (a=1, b=1, c=1)";
 
@@ -86,7 +86,7 @@ architecture TESTBENCH1 of FULL_ADDER_TB is
   end component;
 
   -- Configuration...
-  for IMPL: FULL_ADDER use entity WORK.FULL_ADDER(BEHAVIOR);
+  for IMPL: FULL_ADDER use entity WORK.FULL_ADDER(TIMED_DATAFLOW);
 
   -- Internal signals...
   signal a, b, c, sum, carry: std_logic;
@@ -100,35 +100,35 @@ begin
   process
   begin
     a <= '0'; b <= '0'; c <= '0';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum = '0' and carry = '0' report "0 + 0 + 0 is not 0/0!";
 
     a <= '0'; b <= '1'; c <= '0';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum = '1' and carry = '0' report "0 + 1 + 0 is not 1/0!";
 
     a <= '1'; b <= '0'; c <= '0';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum = '1' and carry = '0' report "1 + 0 + 0 is not 1/0!";
 
     a <= '1'; b <= '1'; c <= '0';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum = '0' and carry = '1' report "1 + 1 + 0 is not 0/1!";
 
     a <= '0'; b <= '0'; c <= '1';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum = '1' and carry = '0' report "0 + 0 + 1 is not 1/0!";
 
     a <= '0'; b <= '1'; c <= '1';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum = '0' and carry = '1' report "0 + 1 + 1 is not 0/1!";
 
     a <= '1'; b <= '0'; c <= '1';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum = '0' and carry = '1' report "1 + 0 + 1 is not 0/1!";
 
     a <= '1'; b <= '1'; c <= '1';
-    wait for 1 ns;      -- wait a bit
+    wait for 10 ns;      -- wait a bit
     assert sum = '1' and carry = '1' report "1 + 1 + 1 is not 1/1!";
 
     -- Print a note & finish simulation now

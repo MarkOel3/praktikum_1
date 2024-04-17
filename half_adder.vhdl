@@ -9,30 +9,56 @@ entity HALF_ADDER is
 end HALF_ADDER;
 
 
-
 architecture BEHAVIOR of HALF_ADDER is
+  -- Declare the component
+  component AND2
+    port (x, y: in std_logic; z: out std_logic);
+  end component;
+
+  component XOR2
+    port (x, y: in std_logic; z: out std_logic);
+  end component;
+
+  -- Internal signal to connect the AND2 component
+  signal xor2_output: std_logic;
+  signal and2_output: std_logic;
 begin
+  -- Instantiate the custom AND2 component
+  I0: AND2 port map (x => a, y => b, z => and2_output);
+  I1: XOR2 port map (x => a, y => b, z => xor2_output);
 
-  process (a, b)
-    variable a2, b2, result: unsigned (1 downto 0);
-  begin
-    a2 := '0' & a;      -- extend 'a' to 2 bit
-    b2 := '0' & b;      -- extend 'b' to 2 bit
-    result := a2 + b2;  -- add them
-    sum <= result(0);   -- output 'sum' = lower bit
-    carry <= result(1); -- output 'carry' = upper bit
-  end process;
+  -- Connect the output of the XOR2 component to the sum output
+  sum <= xor2_output;
 
+  -- Connect the output of the AND2 component to the carry output
+  carry <= and2_output;
 end BEHAVIOR;
 
 
+architecture TIMED_DATAFLOW of HALF_ADDER is
+  -- Declare the component
+  component AND2
+    port (x, y: in std_logic; z: out std_logic);
+  end component;
 
-architecture DATAFLOW of HALF_ADDER is
+  component XOR2
+    port (x, y: in std_logic; z: out std_logic);
+  end component;
+
+  -- Internal signal to connect the AND2 component
+  signal xor2_output: std_logic;
+  signal and2_output: std_logic;
 begin
-  sum <= a xor b;
-  carry <= a and b;
-end DATAFLOW;
+  -- Instantiate the custom AND2 component
+  I0: AND2 port map (x => a, y => b, z => and2_output);
+  I1: XOR2 port map (x => a, y => b, z => xor2_output);
 
+  -- Connect the output of the XOR2 component to the sum output
+  sum <= xor2_output;
+
+  -- Connect the output of the AND2 component to the carry output
+  carry <= and2_output;
+end TIMED_DATAFLOW;
 
 
 architecture STRUCTURE of HALF_ADDER is
