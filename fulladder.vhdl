@@ -28,46 +28,6 @@ end BEHAVIOR;
 
 
 
-architecture TIMED_DATAFLOW of FULL_ADDER is
-  -- Declare the component
-  component AND2
-    port (x, y: in std_logic; z: out std_logic);
-  end component;
-
-  component XOR2
-    port (x, y: in std_logic; z: out std_logic);
-  end component;
-
-  component OR2
-    port (x, y: in std_logic; z: out std_logic);
-  end component;
-
-  -- Internal signal to connect the components
-  signal a_xor_b, a_xor_b_xor_c: std_logic;
-  signal a_and_b, a_and_c, b_and_c: std_logic;
-  signal ab_or_ac, ab_or_ac_or_bc: std_logic;
-
-begin
-  -- XOR gates for sum calculation
-  I0: XOR2 port map (x => a, y => b, z => a_xor_b);  -- Output is A XOR B
-  I1: XOR2 port map (x => a_xor_b, y => c, z => a_xor_b_xor_c);  -- Output is (A XOR B) XOR C for the sum
-
-  -- AND gates for carry calculation
-  I2: AND2 port map (x => a, y => b, z => a_and_b);  -- Output is A AND B
-  I3: AND2 port map (x => a, y => c, z => a_and_c);  -- Output is A AND C, not A and B
-  I4: AND2 port map (x => b, y => c, z => b_and_c);  -- Output is B AND C
-
-  -- OR gates for carry calculation
-  I5: OR2 port map (x => a_and_b, y => a_and_c, z => ab_or_ac);  -- Combine A AND B, A AND C
-  I6: OR2 port map (x => ab_or_ac, y => b_and_c, z => ab_or_ac_or_bc);  -- Combine previous OR with B AND C for the final carry
-
-  -- Connect outputs to the external ports
-  sum <= a_xor_b_xor_c;
-  carry <= ab_or_ac_or_bc;
-end TIMED_DATAFLOW;
-
-
-
 architecture STRUCTURE of FULL_ADDER is
   -- Component Declarations
   component XOR2
