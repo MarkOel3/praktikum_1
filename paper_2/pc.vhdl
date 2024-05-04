@@ -19,10 +19,10 @@ begin
         if rising_edge (clk) then
 			if reset = '1' then
 				pc_reg <= (others => '0');
-			elsif inc = '1' then
-				pc_reg <= std_logic_vector(unsigned(pc_reg) + 1);
 			elsif load = '1' then
 				pc_reg <= pc_in;
+			elsif inc = '1' then
+				pc_reg <= std_logic_vector(unsigned(pc_reg) + 1);
 			end if;
 		end if;
     end process;

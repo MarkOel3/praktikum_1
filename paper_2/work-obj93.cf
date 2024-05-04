@@ -2,12 +2,15 @@ v 4
 file . "pc_tb.vhdl" "234c29c343b88f4d8de8fbdb99aec8b51ba96324" "20240502090309.309":
   entity pc_tb at 1( 0) + 0 on 99;
   architecture testbench2 of pc_tb at 7( 78) + 0 on 100;
-file . "pc.vhdl" "5332b3fd6db4ba8dc1943d4f782dfb6135d14dcc" "20240502090304.890":
-  entity pc at 1( 0) + 0 on 97;
-  architecture rtl of pc at 14( 320) + 0 on 98;
+file . "pc.vhdl" "9953d5a897e906cc693d37d8dec09f97906a68ec" "20240504132135.924":
+  entity pc at 1( 0) + 0 on 103;
+  architecture rtl of pc at 14( 320) + 0 on 104;
 file . "ALU_tb.vhdl" "787a7a0699ff890deed420cf2f5a7dba2f81258c" "20240502074217.645":
   entity alu_tb at 1( 0) + 0 on 49;
   architecture testbench2 of alu_tb at 7( 80) + 0 on 50;
-file . "ALU.vhdl" "8f63d78192163572b16e7850f743d749171e95b8" "20240502074214.424":
-  entity alu at 1( 0) + 0 on 47;
-  architecture rtl of alu at 14( 384) + 0 on 48;
+file . "ALU.vhdl" "f9eb4ff7c31d1831856a03595a1d7a7672354603" "20240504131003.145":
+  entity alu at 1( 0) + 0 on 101;
+  architecture rtl of alu at 14( 384) + 0 on 102;
+file . "regfile.vhdl" "52f5d7f5e54ca337f5ff9b3381c2b44fa66a2bcb" "20240504145158.414":
+  entity regfile at 1( 0) + 0 on 107;
+  architecture rtl of regfile at 17( 588) + 0 on 108;
