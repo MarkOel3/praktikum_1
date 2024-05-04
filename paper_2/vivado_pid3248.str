@@ -1,0 +1,98 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:47:09 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 3248
+License: Customer
+
+Current time: 	Sat May 04 14:03:05 CEST 2024
+Time zone: 	Central European Standard Time (Europe/Berlin)
+
+OS: PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+OS Version: 6.1.0-20-amd64
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 3840x1970
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 9 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/opt/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4
+Java executable location: 	/opt/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	eeslabor
+User home directory: /home/eeslabor
+User working directory: /home/eeslabor/Schreibtisch/hwsys_Praktikum_2
+User country: 	DE
+User language: 	de
+User locale: 	de_DE
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2019.1
+RDI_DATADIR: /opt/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: /home/eeslabor/.Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: /home/eeslabor/.Xilinx/Vivado/2019.1/
+Vivado layouts directory: /home/eeslabor/.Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	/opt/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	/home/eeslabor/Schreibtisch/hwsys_Praktikum_2/pc-ees/pc.log
+Vivado journal file location: 	
+Engine tmp dir: 	./.Xil/Vivado-3248-eesvm
+
+Xilinx Environment Variables
+----------------------------
+EES_VIVADO_SETTINGS: /opt/Xilinx/Vivado/2019.1/settings64.sh
+XILINX: /opt/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: /opt/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2019.1
+XILINX_SDK: /opt/Xilinx/SDK/2019.1
+XILINX_VIVADO: /opt/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	239 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,470 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 44 MB (+43714kb) [00:00:02]
+// [Engine Memory]: 1,250 MB (+1158900kb) [00:00:02]
+// [GUI Memory]: 61 MB (+15554kb) [00:00:02]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// [GUI Memory]: 72 MB (+7974kb) [00:00:02]
+// [Engine Memory]: 1,328 MB (+16710kb) [00:00:02]
+// [GUI Memory]: 79 MB (+4044kb) [00:00:05]
+// [Engine Memory]: 1,443 MB (+50654kb) [00:00:05]
+// [GUI Memory]: 87 MB (+3684kb) [00:00:05]
+// [GUI Memory]: 92 MB (+667kb) [00:00:05]
+// Schematic: addNotify
+// [GUI Memory]: 111 MB (+15607kb) [00:00:05]
+// TclEventType: START_PROGRESS_DIALOG
+// TclEventType: STOP_PROGRESS_DIALOG
+// [GUI Memory]: 118 MB (+1573kb) [00:00:06]
+// by (cl):  Sourcing Tcl script 'pc-ees/pc-synthesize.tcl' : addNotify
+// TclEventType: STOP_PROGRESS_DIALOG
+dismissDialog("Sourcing Tcl script 'pc-ees/pc-synthesize.tcl'"); // by (cl)
+// [GUI Memory]: 173 MB (+51586kb) [00:00:22]
+// [Engine Memory]: 1,751 MB (+247091kb) [00:00:22]
+// Elapsed time: 208 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[PC, Leaf Cells (20), pc_reg_reg[15] (RTL_REG_SYNC__BREG_1)]", 20, false); // bd (O, cl)
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[PC, Leaf Cells (20), pc_reg_reg[0] (RTL_REG_SYNC__BREG_1)]", 5, false); // bd (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[PC, Leaf Cells (20), pc_reg_reg[15] (RTL_REG_SYNC__BREG_1)]", 20, false); // bd (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 67 MB. Current time: 5/4/24, 2:32:58 PM CEST
+// TclEventType: FILE_SET_CHANGE
