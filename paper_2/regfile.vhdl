@@ -33,7 +33,7 @@ begin
     end process;
 
     -- Process 2: Beschreibt Ausgabe, wird von Reginhalt und Ausgangswahlleitung getriggert
-    process (out0_sel, out1_sel) -- wichtig: alle Eingänge in Sensitivitätsliste
+    process (reg, out0_sel, out1_sel) -- wichtig: alle Eingänge in Sensitivitätsliste
     begin
         out0_data <= reg(to_integer(unsigned(out0_sel)));
         out1_data <= reg(to_integer(unsigned(out1_sel)));

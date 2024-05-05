@@ -23,14 +23,14 @@ architecture TESTBENCH2 of REGFILE_tb is
 	for IMPL: REGFILE use entity WORK.REGFILE(RTL);
 
     -- Internal signals
-    signal clk: std_logic;
-    signal out0_data: std_logic_vector (15 downto 0); -- Datenausgang 0
-    signal out0_sel: std_logic_vector (2 downto 0); -- Register-Nr. 0
-    signal out1_data: std_logic_vector (15 downto 0); -- Datenausgang 1
-    signal out1_sel: std_logic_vector (2 downto 0); -- Register-Nr. 1
-    signal in_data: std_logic_vector (15 downto 0); -- Dateneingang
-    signal in_sel: std_logic_vector (2 downto 0); -- Register-Wahl
-    signal load_lo, load_hi: std_logic; -- Register laden
+    signal clk: std_logic := '0';
+    signal out0_data: std_logic_vector (15 downto 0) := (others => '0'); -- Datenausgang 0
+    signal out0_sel: std_logic_vector (2 downto 0) := (others => '0'); -- Register-Nr. 0
+    signal out1_data: std_logic_vector (15 downto 0) := (others => '0'); -- Datenausgang 1
+    signal out1_sel: std_logic_vector (2 downto 0) := (others => '0'); -- Register-Nr. 1
+    signal in_data: std_logic_vector (15 downto 0) := (others => '0'); -- Dateneingang
+    signal in_sel: std_logic_vector (2 downto 0) := (others => '0'); -- Register-Wahl
+    signal load_lo, load_hi: std_logic := '0'; -- Register laden
 
 begin
 
@@ -51,12 +51,36 @@ begin
     begin
 		
     for n in 0 to 7 loop
-        in_data <= "0000000000000000"; in_sel <= std_logic_vector(to_unsigned(n, 3)); load_lo <= '1'; load_hi <= '1', out0_sel <= std_logic_vector(to_unsigned(n, 3)), out1_sel <= std_logic_vector(to_unsigned(n, 3));
+        in_data <= "0000000000000000"; 
+        in_sel <= std_logic_vector(to_unsigned(n, 3)); 
+        load_lo <= '1'; 
+        load_hi <= '1'; 
+        out0_sel <= std_logic_vector(to_unsigned(n, 3)); 
+        out1_sel <= std_logic_vector(to_unsigned(n, 3));
         run_cycle;
         assert out0_data = "0000000000000000" report "out0_data: Init does not work";
         assert out1_data = "0000000000000000" report "out1_data: Init does not work";
     end loop;
-        
+
+    for n in 0 to 7 loop
+      in_data <= "1110000000000111"; 
+      in_sel <= std_logic_vector(to_unsigned(n, 3)); 
+      load_lo <= '0'; 
+      load_hi <= '1'; 
+      out0_sel <= std_logic_vector(to_unsigned(n, 3)); 
+      run_cycle;
+      assert out0_data = "1110000000000000" report "out0_data: load high does not work";
+    end loop;
+    for n in 0 to 7 loop
+      in_data <= "1111110000000111"; 
+      in_sel <= std_logic_vector(to_unsigned(n, 3));
+      load_lo <= '1'; 
+      load_hi <= '0'; 
+      out1_sel <= std_logic_vector(to_unsigned(n, 3));
+      run_cycle;
+      assert out1_data = "1110000000000111" report "out1_data: load low does not work";
+    end loop;  
+
         -- Print a note & finish simulation now
 		assert false report "Simulation finished" severity note;
 		wait;               -- end simulation
